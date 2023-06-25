@@ -2,7 +2,7 @@ let inputBox = document.getElementById("input")
 let btn = document.getElementById("btn")
 let totalTodoCount = document.getElementById("totaltodos")
 let displayTodosArea = document.getElementById("displayTodosArea")
-
+let deleteBtn = document.getElementById("deleteBtn")
 let todoArray = []
 
 function addTodo(){
@@ -33,7 +33,7 @@ function displayTodos(){
         <div class="singletodo">
                     <p>${ todoArray[i] }</p>
                 
-                    <button>
+                    <button id ="deleteBtn" onclick = "deleteTodo(${i})">
                         <ion-icon name="trash"></ion-icon>
                     </button>
                     
@@ -41,5 +41,16 @@ function displayTodos(){
         `
     }
     displayTodosArea.innerHTML = todos;
+
+}
+function deleteTodo(index){
+    todoArray.splice(index,1)
+    displayTodos()
+    calculateTodos()
+}
+function clearallTodo(){
+    todoArray = []
+    displayTodos()
+    calculateTodos()
 
 }

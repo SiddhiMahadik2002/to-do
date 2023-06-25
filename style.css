@@ -104,4 +104,5 @@ background: linear-gradient(180deg, rgba(144,218,179,1) 0%, rgba(66,107,227,1) 9
     border-radius:3px;
     border:none;
     padding: 10px 14px;
+    cursor:   pointer;
 }
